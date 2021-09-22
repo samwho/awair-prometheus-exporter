@@ -40,10 +40,10 @@ lazy_static! {
 #[derive(StructOpt, Debug, Clone)]
 #[structopt(name = "awair-prometheus-exporter")]
 struct Opt {
-    #[structopt(long)]
+    #[structopt(long, env = "TARGET")]
     target: Url,
 
-    #[structopt(long, default_value = "8888")]
+    #[structopt(long, default_value = "8888", env = "METRICS_PORT")]
     metrics_port: u16,
 }
 
